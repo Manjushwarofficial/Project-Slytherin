@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./hrs_admin_router-httpd.conf /etc/apache2/sites-available/hrs_admin_router-httpd.conf
+COPY ./app/hrs_admin_router-httpd.conf /etc/apache2/sites-available/hrs_admin_router-httpd.conf
 
 WORKDIR /var/www/hrs_admin_router
 COPY ./app/website/requirements.txt app/requirements.txt
