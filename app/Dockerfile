@@ -12,12 +12,12 @@ RUN apt-get update && apt-get install -y \
 COPY ./hrs_admin_router-httpd.conf /etc/apache2/sites-available/hrs_admin_router-httpd.conf
 
 WORKDIR /var/www/hrs_admin_router
-COPY ./website/requirements.txt app/requirements.txt
+COPY ./app/website/requirements.txt app/requirements.txt
 RUN pip install -r app/requirements.txt
 
-COPY ./website/hrs_admin_router.wsgi .
-COPY ./website/run.py .
-COPY ./website/app ./app
+COPY ./app/website/hrs_admin_router.wsgi .
+COPY ./app/website/run.py .
+COPY ./app/website/app ./app
 
 WORKDIR /var/www/internal_router
 COPY ./app/internal/requirements.txt app/requirements.txt
